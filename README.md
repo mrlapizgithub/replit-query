@@ -1,1 +1,1 @@
-"# replit-query" 
+# REPL.IT QUERY
