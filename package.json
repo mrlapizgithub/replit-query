@@ -1,0 +1,24 @@
+{
+  "name": "replit-query",
+  "version": "1.0.0",
+  "description": "An easy way to use the repl.it APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrlapizgithub/replit-query.git"
+  },
+  "keywords": [
+    "replit",
+    "replit-talk",
+    "replit-api"
+  ],
+  "author": "Junhao Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrlapizgithub/replit-query/issues"
+  },
+  "homepage": "https://github.com/mrlapizgithub/replit-query#readme"
+}
