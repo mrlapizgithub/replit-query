@@ -25,26 +25,24 @@ You may want to read up on [graphQL](https://graphql.org/).
 A return value will look something like
 ```json
 {
-  "data": {
-    ...
-  }
+  ...
 }
 ```
 ### query
 ```javascript
-await client.query('userByUsername(username: "username"){id,karma}').data.userByUsername.karma;
+await client.query('userByUsername(username: "username"){id,karma}').karma;
 ```
 ### userByUsername
 ```javascript
-await client.talk.userByUsername("username", ["id", "karma"]).data.userByUsername.karma;
+await client.talk.userByUsername("username", ["id", "karma"]).karma;
 ```
 ### userById
 ```javascript
-await client.talk.userById("id", ["id", "karma"]).data.user.karma;
+await client.talk.userById("id", ["id", "karma"]).karma;
 ```
 ### leaderboard
 ```javascript
-await client.talk.leaderboard(5).data.items[0].karma; // top 5, the first person's karma
+await client.talk.leaderboard(5)[0].karma; // top 5, the first person's karma
 ```
 ### login
 ```javascript

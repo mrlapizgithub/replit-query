@@ -25,6 +25,6 @@ const client = () => {
   };
 };
 (async () => {
-  console.log(await client().talk.userByUsername("coder100", ["username"]));
+  console.log(await client().talk.leaderboard(5, ["username", "karma"]));
 })()
 module.exports = client;
