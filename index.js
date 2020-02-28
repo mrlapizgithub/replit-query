@@ -23,8 +23,8 @@ const client = () => {
     },
     talk
   };
-};
+};/*
 (async () => {
   console.log(await client().talk.leaderboard(5, ["username", "karma"]));
-})()
+})()*/
 module.exports = client;

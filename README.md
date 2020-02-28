@@ -1,5 +1,5 @@
 # REPL.IT QUERY
-In this repl.it API, I plan to take advantage of everything.
+In this repl.it API, I plan to take advantage of everything. Adapted from [replya](https://www.npmjs.com/package/replya).
 ## Quickstart
 ```javascript
 const replit = require("replit-query")();
@@ -30,19 +30,27 @@ A return value will look something like
 ```
 ### query
 ```javascript
-await client.query('userByUsername(username: "username"){id,karma}').karma;
+await client.query('userByUsername(username: "username"){karma}').karma;
 ```
 ### userByUsername
 ```javascript
-await client.talk.userByUsername("username", ["id", "karma"]).karma;
+await client.talk.userByUsername("username", ["karma"]).karma;
 ```
 ### userById
 ```javascript
-await client.talk.userById("id", ["id", "karma"]).karma;
+await client.talk.userById(2222, ["karma"]).karma;
 ```
 ### leaderboard
 ```javascript
-await client.talk.leaderboard(5)[0].karma; // top 5, the first person's karma
+await client.talk.leaderboard(5, ["karma"])[0].karma; // top 5, the first person's karma
+```
+### commentById
+```javascript
+await client.talk.commentById(123456, ["title"]).title;
+```
+### posts
+```javascript
+await client.talk.posts(10, ["title"])[0].title; // newest post's title
 ```
 ### login
 ```javascript
@@ -60,3 +68,5 @@ await client.login("username", "password");
 They will be in the following form.
 `replit query error: ...`
 Note that errors are put within a `.catch()` block.
+## Credits
+Special thanks to m3l0f1 to which this is adapted from [replya](https://www.npmjs.com/package/replya)
