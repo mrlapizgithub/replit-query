@@ -21,5 +21,5 @@ const client = headers => {
     talk
   };
 };
-console.log(client().talk.userByUsername("coder100").username)
+//console.log(client().talk.userByUsername("coder100"))
 module.exports = client;
