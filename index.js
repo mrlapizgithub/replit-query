@@ -1,5 +1,3 @@
-const fetch = require("node-fetch");
-
 const talk = require("./lib/talk.js");
 const query = require("./lib/query.js");
 
@@ -26,4 +24,7 @@ const client = () => {
     talk
   };
 };
+(async () => {
+  console.log(await client().talk.userByUsername("coder100", ["username"]));
+})()
 module.exports = client;

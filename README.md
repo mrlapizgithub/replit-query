@@ -32,15 +32,15 @@ A return value will look something like
 ```
 ### query
 ```javascript
-await client.query('userByUsername(username: "username"){id,karma}').data.karma;
+await client.query('userByUsername(username: "username"){id,karma}').data.userByUsername.karma;
 ```
 ### userByUsername
 ```javascript
-await client.talk.userByUsername("username", ["id", "karma"]).data.karma;
+await client.talk.userByUsername("username", ["id", "karma"]).data.userByUsername.karma;
 ```
 ### userById
 ```javascript
-await client.talk.userById("id", ["id", "karma"]).data.karma;
+await client.talk.userById("id", ["id", "karma"]).data.user.karma;
 ```
 ### leaderboard
 ```javascript
