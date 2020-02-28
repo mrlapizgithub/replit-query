@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/mrlapizgithub/replit-query/issues"
   },
-  "homepage": "https://github.com/mrlapizgithub/replit-query#readme"
+  "homepage": "https://github.com/mrlapizgithub/replit-query#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
 }
