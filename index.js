@@ -1,7 +1,11 @@
 const fetch = require("node-fetch");
-const client = () => {
-  this.prototype = {
-    headers: {
+
+const talk = require("./lib/talk.js");
+const query = require("./lib/query.js");
+
+const client = headers => {
+  return {
+    headers: headers || {
       "Content-Type": "application/json",
       "Accept": "application/json",
       "Accept-Encoding": "gzip, deflate, br",
@@ -10,21 +14,12 @@ const client = () => {
       "Referrer": "https://repl.it",
       "Origin": "https://repl.it"
     },
-    query: query => {
-      return await fetch("https://repl.it/graphql", {
-         method: "POST",
-         headers,
-         body: JSON.stringify({
-           query: `{\n  ${query}\n}`
-         })
-       }).then(e=>e.json()).catch(e=>console.error("replit query error:", e));
-    },
+    query,
     login: (username, password) => {
-
+      //
     },
-    getUserByUsername: (username, query=["username"]) => {
-      this.query(`userByUsername(username: ${username}){${query.join(",")}}`);
-    }
+    talk
   };
 };
+console.log(client().talk.userByUsername("coder100").username)
 module.exports = client;
