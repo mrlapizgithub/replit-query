@@ -3,23 +3,27 @@ const fetch = require("node-fetch");
 const talk = require("./lib/talk.js");
 const query = require("./lib/query.js");
 
-const client = headers => {
+const client = () => {
+  const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "X-Requested-With": "any",
+    "Referrer": "https://repl.it",
+    "Origin": "https://repl.it"
+  };
   return {
-    headers: headers || {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-      "Accept-Encoding": "gzip, deflate, br",
-      "Connection": "keep-alive",
-      "X-Requested-With": "coder100",
-      "Referrer": "https://repl.it",
-      "Origin": "https://repl.it"
-    },
+    headers,
     query,
     login: (username, password) => {
-      //
+      return fetch("https://repl.it/login", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({username, password})
+      }).then(e => e.json()).catch(e => console.error("replit query error:", e))
     },
     talk
   };
 };
-//console.log(client().talk.userByUsername("coder100"))
 module.exports = client;
