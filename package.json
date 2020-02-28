@@ -1,6 +1,6 @@
 {
   "name": "replit-query",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "An easy way to use the repl.it APIs.",
   "main": "index.js",
   "scripts": {
