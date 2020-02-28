@@ -7,3 +7,7 @@ const client = new replit();
 await client.login("username", "password");
 ...
 ```
+## Errors
+They will be in the following form.
+`replit query error: ...`
+Note that errors are put within a `.catch()` block.

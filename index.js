@@ -17,13 +17,13 @@ const client = () => {
          body: JSON.stringify({
            query: `{\n  ${query}\n}`
          })
-       }).then(e=>e.json());
+       }).then(e=>e.json()).catch(e=>console.error("replit query error:", e));
     },
     login: (username, password) => {
 
     },
     getUserByUsername: (username, query=["username"]) => {
-      this.query(`userByUsername(username: ${username})`)
+      this.query(`userByUsername(username: ${username}){${query.join(",")}}`);
     }
   };
 };
