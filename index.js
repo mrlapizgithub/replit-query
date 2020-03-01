@@ -12,7 +12,6 @@ const client = () => {
     "Origin": "https://repl.it"
   };
   return {
-    headers,
     query,
     login: (username, password) => {
       return fetch("https://repl.it/login", {
@@ -23,8 +22,5 @@ const client = () => {
     },
     talk
   };
-};/*
-(async () => {
-  console.log(await client().talk.leaderboard(5, ["username", "karma"]));
-})()*/
+};
 module.exports = client;
