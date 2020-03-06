@@ -60,9 +60,14 @@ await client.login("username", "password");
   username: ...,
   email: ...,
   ...
-  auth_jwt: ...
+  auth_jwt: ...,
+  ...
 }
 */
+```
+### getLoginKey
+```javascript
+await client.getLoginKey("username", "password"); // => 3Er%R4d3f...
 ```
 ## Errors
 They will be in the following form.
